@@ -24,7 +24,7 @@ GameManager.prototype.setup = function () {
 
   var select = document.gameModeForm.gameModeSelect;
   this.gameMode     = +(select.options[select.selectedIndex].value);
-  this.tileTypes = [2,3,5,7];
+  this.tileTypes = [2,3,5];
   if (this.gameMode & 1) {
     this.tileTypes = [1,2,4,8,16,32,64,128,256,512,1024,2048];
     this.actuator.updateCurrentlyUnlocked(this.tileTypes);
