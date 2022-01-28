@@ -4,7 +4,7 @@ function GameManager(size, InputManager, Actuator, ScoreManager) {
   this.scoreManager = new ScoreManager;
   this.actuator     = new Actuator;
 
-  this.startTiles   = 2;
+  this.startTiles   = 16;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -26,9 +26,9 @@ GameManager.prototype.setup = function () {
   this.gameMode     = +(select.options[select.selectedIndex].value);
   this.tileTypes = [2,3,5,7];
   if (this.gameMode & 1) {
-    this.tileTypes = [2];
+    this.tileTypes = [1];
     this.actuator.updateCurrentlyUnlocked(this.tileTypes);
-    this.tilesSeen = [2];
+    this.tilesSeen = [1];
   } 
 
   this.score        = 0;
